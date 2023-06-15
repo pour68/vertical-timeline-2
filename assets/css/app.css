@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background: url(../imgs/ice-and-mountain.jpg) no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 2rem;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.timeline__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.timeline__header h1 {
+    font-size: 3rem;
+}
+
+.timeline__header p {
+    font-size: 1.2rem;
+    color: #ccc;
+    text-transform: capitalize;
+}
+
+.timeline__body {
+    position: relative;
+    width: 100%;
+    max-width: 512px;
+    padding-block: 4rem;
+    margin-inline: auto;
+}
+
+.timeline__body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.timeline__checkpoint {
+    position: relative;
+    border: 3px solid #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.timeline__checkpoint:nth-child(odd) { 
+    left: 60%;
+}
+
+.timeline__checkpoint:nth-child(even) { 
+    right: 60%;
+}
+
+.timeline__item h2 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.timeline__checkpoint::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 4px;
+    background-color: #fff;
+}
+
+.timeline__checkpoint:nth-child(odd)::before {
+    left: -65px;
+}
+
+.timeline__checkpoint:nth-child(even)::before {
+    right: -65px;
+}
+
+.timeline__checkpoint::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+}
+
+.timeline__checkpoint:nth-child(odd)::after {
+    left: -70px;
+}
+
+.timeline__checkpoint:nth-child(even)::after {
+    right: -70px;
+}
+
+@media (max-width: 1170px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .timeline__checkpoint:nth-child(odd) { 
+        left: 0;
+    }
+
+    .timeline__checkpoint:nth-child(even) { 
+        right: 0;
+    }
+
+    .timeline__body::after {
+        left: 0;
+        transform: translateX(-16px);
+    }
+
+    .timeline__checkpoint::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 4px;
+        background-color: #fff;
+    }
+
+    .timeline__checkpoint:nth-child(odd)::before, .timeline__checkpoint:nth-child(even)::before {
+        left: -18px;
+    }
+
+    .timeline__checkpoint::after {
+        width: 16px;
+        height: 16px;
+    }
+
+    .timeline__checkpoint:nth-child(odd)::after, .timeline__checkpoint:nth-child(even)::after {
+        left: -26px;
+    }
+}
